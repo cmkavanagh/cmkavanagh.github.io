@@ -222,55 +222,73 @@ nav a:hover {
 }
 
 /* Contact Section */
-.contact {
-    padding: 60px 20px;
-    background-color: var(--white);
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 36px;
-    color: var(--main-purple);
-    margin-bottom: 30px;
-}
-
-.contact-form {
+#contact {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 0 auto;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: var(--main-purple);
+    margin-bottom: 20px;
+}
+
+#contact form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-.contact-form input, 
-.contact-form textarea {
-    padding: 15px;
-    border: 2px solid var(--light-blue);
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    border-color: var(--main-blue);
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--main-dark);
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--main-dark);
+    box-sizing: border-box;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--main-purple);
     outline: none;
 }
 
-.contact-form button {
-    padding: 15px;
-    background-color: var(--main-blue);
-    color: var(--white);
+button {
+    padding: 12px 20px;
+    background-color: var(--main-purple);
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
-.contact-form button:hover {
-    background-color: var(--dark-blue);
-    transform: scale(1.05);
+button:hover {
+    background-color: var(--light-purple);
+}
+
+button:focus {
+    outline: none;
+}
+
 }
 
 /* Scroll to Top Button */
