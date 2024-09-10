@@ -64,7 +64,7 @@ nav a:hover {
 .hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(to right, var(--main-blue, #3498db), var(--light-purple, #9b59b6)), 
+    background: linear-gradient(to right, var(--main-blue), var(--light-purple)), 
                 url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -125,7 +125,80 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Keyframes for Animation */
+/* Dynamic Floating Shapes */
+.dynamic-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dynamic-shapes .hexagon, .dynamic-shapes .star, .dynamic-shapes .diamond {
+    position: absolute;
+    opacity: 0.4;
+    animation: float 8s infinite ease-in-out, rotate 4s infinite linear;
+    transform-origin: center;
+}
+
+.dynamic-shapes .hexagon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--main-purple), var(--main-blue));
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    top: 10%;
+    left: 15%;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+}
+
+.dynamic-shapes .star {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--light-purple), var(--light-blue));
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 50%;
+    right: 20%;
+    animation-duration: 12s;
+    animation-timing-function: ease-in-out;
+}
+
+.dynamic-shapes .diamond {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, var(--main-blue), var(--light-purple));
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    bottom: 15%;
+    left: 30%;
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Keyframes for Floating and Rotation Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Keyframes for Text Animations */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -141,8 +214,9 @@ nav a:hover {
     100% { width: 100%; }
 }
 
+
 /* Floating Shapes */
-.floating-shapes .circle, .floating-shapes .triangle, .floating-shapes .square {
+.floating-shapes .hexagon, .floating-shapes .star, .floating-shapes .diamond {
     position: absolute;
     opacity: 0.4;
     animation: float 5s infinite ease-in-out;
