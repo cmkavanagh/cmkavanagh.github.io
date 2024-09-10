@@ -92,25 +92,45 @@ nav a:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
-.typewriter-color-change {
-    overflow: hidden;
-    border-right: 2px solid var(--white);
+.typewriter-container {
+    overflow: hidden; /* Ensures that the typing effect works properly */
     white-space: nowrap;
-    font-size: 2rem;
+    border-right: 2px solid var(--white); /* Typewriter cursor effect */
     font-family: 'Press Start 2P', cursive; /* Typewriter font */
-    animation: typing 4s steps(30, end) 1s 1 normal both, 
-               colorChange 6s infinite;
-    animation-delay: 2s;
-    color: var(--white);
+    font-size: 1.5rem;
+    animation: typing 10s steps(60, end), blink-caret 0.75s step-end infinite;
+    width: 0; /* Start width at 0 for animation effect */
 }
 
-.hero-subheading {
-    font-size: 1.25rem;
-    margin-top: 10px;
-    color: var(--light-gray);
-    font-family: 'Press Start 2P', cursive; /* Typewriter font */
+.typewriter-text {
+    display: block; /* Make each line a block to be animated independently */
+    white-space: nowrap;
 }
 
+/* Keyframes for Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes for Caret Blinking */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Keyframes for Fade In */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Button Styles */
 .hero-btn {
     display: inline-block;
     padding: 12px 30px;
@@ -132,38 +152,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Keyframes for Animations */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes colorChange {
-    0% {
-        color: #3498db; /* Blue */
-    }
-    25% {
-        color: #9b59b6; /* Purple */
-    }
-    50% {
-        color: #e74c3c; /* Red */
-    }
-    75% {
-        color: #f1c40f; /* Yellow */
-    }
-    100% {
-        color: #3498db; /* Back to Blue */
-    }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
 
 /* Keyframes for Floating Animation */
 @keyframes float {
