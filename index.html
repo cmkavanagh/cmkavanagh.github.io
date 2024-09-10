@@ -65,5 +65,75 @@
     <footer class="main-footer">
         <p>&copy; 2024 CM Kavanagh</p>
     </footer>
+    <script>
+    // Smooth Scroll Navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetSection.offsetTop - 50, // Adjust the offset for smooth scroll
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Form Validation
+    document.querySelector('.contact-form').addEventListener('submit', function (e) {
+        const name = document.querySelector('input[name="name"]').value.trim();
+        const email = document.querySelector('input[name="email"]').value.trim();
+        const message = document.querySelector('textarea[name="message"]').value.trim();
+        let valid = true;
+
+        if (name === '' || email === '' || message === '') {
+            alert('Please fill in all the fields.');
+            valid = false;
+        } else if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            valid = false;
+        }
+
+        if (!valid) {
+            e.preventDefault(); // Prevent form submission if validation fails
+        }
+    });
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    // Scroll to Top Button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.innerHTML = '⬆';
+    scrollToTopBtn.style.position = 'fixed';
+    scrollToTopBtn.style.bottom = '30px';
+    scrollToTopBtn.style.right = '30px';
+    scrollToTopBtn.style.padding = '10px';
+    scrollToTopBtn.style.display = 'none';
+    scrollToTopBtn.style.backgroundColor = '#007BFF';
+    scrollToTopBtn.style.color = 'white';
+    scrollToTopBtn.style.border = 'none';
+    scrollToTopBtn.style.borderRadius = '50%';
+    scrollToTopBtn.style.cursor = 'pointer';
+    document.body.appendChild(scrollToTopBtn);
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
 </body>
 </html>
