@@ -426,14 +426,15 @@ footer {
     }
 }
 
-/* Typing Text Animation with Color Change */
+/* Typing Text Animation with Color Change and Delay */
 .typewriter-color-change {
     overflow: hidden;
     border-right: 2px solid;
     white-space: nowrap;
-    width: 0;
     font-size: 2rem;
-    animation: typing 4s steps(30, end) forwards, colorChange 6s infinite;
+    animation: typing 4s steps(30, end) 1s 1 normal both, 
+               colorChange 6s infinite;
+    animation-delay: 2s; /* Delay before starting the typing animation */
 }
 
 /* Keyframes for Typing Animation */
@@ -464,4 +465,3 @@ footer {
         color: #3498db; /* Back to Blue */
     }
 }
-
