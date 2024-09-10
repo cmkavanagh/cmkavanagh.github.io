@@ -86,7 +86,6 @@ nav a:hover {
     text-align: center;
     z-index: 2; /* Place content above background elements */
     position: relative;
-    animation: fadeIn 1s ease-in-out;
 }
 
 .typewriter-container {
@@ -95,10 +94,11 @@ nav a:hover {
     border-right: 2px solid var(--white); /* Typewriter cursor effect */
     font-family: 'Courier New', Courier, monospace; /* Typewriter font */
     font-size: 1.5rem;
-    animation: typing 10s steps(60, end), blink-caret 0.75s step-end infinite;
-    width: 0; /* Start width at 0 for animation effect */
-    margin: 0 auto; /* Center container */
-    display: inline-block; /* Required to center the block inside inline context */
+    animation: typing 10s steps(60, end) 1s 1 normal both, 
+               blink-caret 0.75s step-end infinite;
+    width: auto; /* Allow container to fit text */
+    display: inline-block; /* Keep container inline for centering */
+    margin: 0; /* Ensure no extra margin affects centering */
 }
 
 .typewriter-text {
