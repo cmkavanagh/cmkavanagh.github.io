@@ -60,6 +60,9 @@ nav a:hover {
     background-color: var(--light-purple);
 }
 
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -94,6 +97,7 @@ nav a:hover {
     border-right: 2px solid var(--white);
     white-space: nowrap;
     font-size: 2rem;
+    font-family: 'Press Start 2P', cursive; /* Typewriter font */
     animation: typing 4s steps(30, end) 1s 1 normal both, 
                colorChange 6s infinite;
     animation-delay: 2s;
@@ -104,6 +108,7 @@ nav a:hover {
     font-size: 1.25rem;
     margin-top: 10px;
     color: var(--light-gray);
+    font-family: 'Press Start 2P', cursive; /* Typewriter font */
 }
 
 .hero-btn {
@@ -119,6 +124,7 @@ nav a:hover {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     margin-top: 20px;
+    font-family: 'Press Start 2P', cursive; /* Typewriter font */
 }
 
 .hero-btn:hover {
@@ -157,61 +163,6 @@ nav a:hover {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-}
-
-/* Keyframes for Text Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes moveUp {
-    0% { transform: translateY(30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes expandLine {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
-
-
-/* Floating Shapes */
-.floating-shapes .hexagon, .floating-shapes .star, .floating-shapes .diamond {
-    position: absolute;
-    opacity: 0.4;
-    animation: float 5s infinite ease-in-out;
-    z-index: 1;
-}
-
-.floating-shapes .circle {
-    background-color: var(--light-blue);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    top: 20%;
-    left: 10%;
-    animation-duration: 7s;
-}
-
-.floating-shapes .triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 80px solid var(--main-purple);
-    top: 40%;
-    right: 20%;
-    animation-duration: 9s;
-}
-
-.floating-shapes .square {
-    background-color: var(--main-blue);
-    width: 60px;
-    height: 60px;
-    bottom: 10%;
-    left: 15%;
-    animation-duration: 6s;
 }
 
 /* Keyframes for Floating Animation */
