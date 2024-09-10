@@ -5,127 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CM Kavanagh's Portfolio - HTML, CSS, and JavaScript Projects">
     <title>CM Kavanagh's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #007BFF;
-        }
-        section {
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .project {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: white;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <h1>CM Kavanagh's Portfolio</h1>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CM Kavanagh</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Hello, I'm CM Kavanagh</h2>
+            <p>Web Developer in Progress - Specializing in HTML, CSS, and JavaScript</p>
+        </div>
+    </section>
 
-    <section id="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
-        <p>Hello! I’m CM Kavanagh, and I’ve been learning HTML, CSS, and JavaScript to build interactive and responsive websites. I’m passionate about web development and am excited to share my progress and projects with you.</p>
+        <p>
+            I'm CM Kavanagh, a passionate learner of web development. I’m constantly exploring new web technologies to build modern, responsive websites. This portfolio highlights some of my work using HTML, CSS, and JavaScript.
+        </p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="projects">
         <h2>Projects</h2>
-        
-        <div class="project">
-            <h3>Project 1: Personal Blog</h3>
-            <p>This project is a simple personal blog that showcases my ability to use HTML and CSS to create a clean, responsive layout.</p>
+        <div class="project-item">
+            <h3>Personal Blog</h3>
+            <p>A clean, responsive blog layout using HTML and CSS.</p>
         </div>
-
-        <div class="project">
-            <h3>Project 2: JavaScript To-Do List</h3>
-            <p>A functional to-do list built using JavaScript, with features like adding, removing, and marking tasks as complete.</p>
+        <div class="project-item">
+            <h3>JavaScript To-Do List</h3>
+            <p>An interactive to-do list with task management features.</p>
         </div>
-
-        <div class="project">
-            <h3>Project 3: Responsive Portfolio</h3>
-            <p>This is my current portfolio site that is fully responsive and displays well on any device, thanks to the use of CSS media queries.</p>
+        <div class="project-item">
+            <h3>Responsive Portfolio</h3>
+            <p>A portfolio built with mobile-first design principles.</p>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact">
         <h2>Contact Me</h2>
         <form class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2024 CM Kavanagh. All rights reserved.</p>
+    <footer class="main-footer">
+        <p>&copy; 2024 CM Kavanagh</p>
     </footer>
-
 </body>
 </html>
