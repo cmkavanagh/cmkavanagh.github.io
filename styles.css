@@ -94,7 +94,7 @@ nav a:hover {
     border-right: 2px solid var(--white); /* Typewriter cursor effect */
     font-family: 'Courier New', Courier, monospace; /* Typewriter font */
     font-size: 1.5rem;
-    animation: typing 10s steps(60, end) 1s 1 normal both, 
+    animation: typing 5s steps(60, end) 1s 1 normal both, 
                blink-caret 0.75s step-end infinite;
     width: auto; /* Allow container to fit text */
     display: inline-block; /* Keep container inline for centering */
