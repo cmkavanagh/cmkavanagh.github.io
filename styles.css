@@ -190,84 +190,78 @@ textarea:focus-visible {
 #contact {
     padding: 40px 20px;
     background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 0 auto;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', monospace; /* Ensure font consistency */
 }
 
 #contact h2 {
     font-size: 2.2rem;
-    color: var(--main-blue);
+    color: var(--main-purple);
     margin-bottom: 20px;
-    text-align: center;
+    text-align: center; /* Center align heading for better appearance */
 }
 
-#contact .form-group {
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add space between form elements */
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-#contact label {
+.form-group label {
     display: block;
-    font-weight: 600;
+    font-size: 1.1rem;
     margin-bottom: 8px;
     color: var(--dark-blue);
+    font-weight: 600; /* Make labels more prominent */
 }
 
-#contact input[type="text"],
-#contact input[type="email"],
-#contact textarea {
+.form-group input, 
+.form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--gray);
-    border-radius: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Slightly rounded corners */
+    font-size: 1.1rem;
+    color: var(--dark-blue);
     box-sizing: border-box;
-    font-size: 1rem;
-    font-family: inherit;
     transition: border-color 0.3s;
 }
 
-#contact input[type="text"]:focus,
-#contact input[type="email"]:focus,
-#contact textarea:focus {
-    border-color: var(--main-blue);
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--main-purple);
     outline: none;
 }
 
-#contact textarea {
-    resize: vertical;
-}
-
-#contact button {
-    display: inline-block;
+button {
     padding: 12px 24px;
-    font-size: 1rem;
     background-color: var(--main-purple);
-    color: var(--white);
+    color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700; /* Make the button text bold */
     transition: background-color 0.3s, transform 0.3s;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
 }
 
-#contact button:hover,
-#contact button:focus {
+button:hover, button:focus {
     background-color: var(--light-purple);
     transform: scale(1.05);
     outline: none;
 }
 
-#contact button:focus {
+button:focus {
     outline: 3px solid var(--main-blue);
     outline-offset: 2px;
 }
-
-
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
