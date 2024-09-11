@@ -22,22 +22,19 @@
         </nav>
     </header>
 
-<div class="hero-content">
-    <div class="typewriter-container">
-        <p class="typewriter-text">Hi, I'm CM Kavanagh</p>
+    <div class="hero-content">
+        <div class="typewriter-container">
+            <p class="typewriter-text">Hi, I'm CM Kavanagh</p>
+        </div>
+        <div>
+            <p>Web Developer in Progress - Specialising in HTML, CSS, and JavaScript</p>
+        </div>
+        <a href="#projects" class="hero-btn">View My Work</a>
     </div>
-    <div>
-        <p>Web Developer in Progress - Specialising in HTML, CSS, and JavaScript</p>
-    </div>
-    <a href="#projects" class="hero-btn">View My Work</a>
-</div>
-
 
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p> 
-            I'm CM Kavanagh, a passionate learner of web development. I’m constantly exploring new web technologies to build modern, responsive websites. This portfolio highlights some of my work using HTML, CSS, and JavaScript.
-        </p>
+        <p>I'm CM Kavanagh, a passionate learner of web development. I’m constantly exploring new web technologies to build modern, responsive websites. This portfolio highlights some of my work using HTML, CSS, and JavaScript.</p>
     </section>
 
     <section id="projects" class="projects">
@@ -54,127 +51,80 @@
         </div>
     </section>
 
-<section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm" action="https://formspree.io/f/xpwaeaya" method="POST">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="https://formspree.io/f/xpwaeaya" method="POST" aria-label="Contact Form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-label="Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-label="Email">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required aria-label="Message"></textarea>
+            </div>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
     <footer class="main-footer">
         <p>&copy; 2024 CM Kavanagh</p>
     </footer>
+
     <script>
-    // Smooth Scroll Navigation
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            window.scrollTo({
-                top: targetSection.offsetTop - 50, // Adjust the offset for smooth scroll
-                behavior: 'smooth'
+        // Smooth Scroll Navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Adjust the offset for smooth scroll
+                    behavior: 'smooth'
+                });
             });
         });
-    });
 
-    // Form Validation
-    document.querySelector('.contact-form').addEventListener('submit', function (e) {
-        const name = document.querySelector('input[name="name"]').value.trim();
-        const email = document.querySelector('input[name="email"]').value.trim();
-        const message = document.querySelector('textarea[name="message"]').value.trim();
-        let valid = true;
+        // Animation Toggle
+        const animationToggle = document.createElement('button');
+        animationToggle.innerText = 'Toggle Animations';
+        animationToggle.style.position = 'fixed';
+        animationToggle.style.top = '20px';
+        animationToggle.style.right = '20px';
+        animationToggle.style.padding = '10px';
+        document.body.appendChild(animationToggle);
 
-        if (name === '' || email === '' || message === '') {
-            alert('Please fill in all the fields.');
-            valid = false;
-        } else if (!validateEmail(email)) {
-            alert('Please enter a valid email address.');
-            valid = false;
-        }
-
-        if (!valid) {
-            e.preventDefault(); // Prevent form submission if validation fails
-        }
-    });
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
-    }
-
-    // Scroll to Top Button
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '⬆';
-    scrollToTopBtn.style.position = 'fixed';
-    scrollToTopBtn.style.bottom = '30px';
-    scrollToTopBtn.style.right = '30px';
-    scrollToTopBtn.style.padding = '10px';
-    scrollToTopBtn.style.display = 'none';
-    scrollToTopBtn.style.backgroundColor = '#007BFF';
-    scrollToTopBtn.style.color = 'white';
-    scrollToTopBtn.style.border = 'none';
-    scrollToTopBtn.style.borderRadius = '50%';
-    scrollToTopBtn.style.cursor = 'pointer';
-    document.body.appendChild(scrollToTopBtn);
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.style.display = 'block';
-        } else {
-            scrollToTopBtn.style.display = 'none';
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        animationToggle.addEventListener('click', () => {
+            document.body.classList.toggle('animations-disabled');
         });
-    });
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        fetch('https://formspree.io/f/xpwaeaya', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json'
-            },
-            body: new FormData(this)
-        }).then(response => {
-            if (response.ok) {
-                alert('Message sent successfully!');
-                this.reset();
-            } else {
-                alert('Failed to send message. Please try again.');
-            }
-        }).catch(error => {
-            alert('Error: ' + error.message);
+        // Form Submission with AJAX
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            fetch('https://formspree.io/f/xpwaeaya', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: new FormData(this)
+            }).then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    this.reset();
+                } else {
+                    alert('Failed to send message. Please try again.');
+                }
+            }).catch(error => {
+                alert('Error: ' + error.message);
+            });
         });
-    });
-</script>
-
-
-</script>
-
+    </script>
 </body>
 </html>
