@@ -11,42 +11,7 @@ body {
     background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* Added background back */
     line-height: 1.6;
 }
-/* Theme Color Variables */
-:root {
-    --main-bg-color: #f5f7fa; /* Light mode background */
-    --main-text-color: #333;
-    --header-bg-color: var(--main-purple);
-    --nav-text-color: var(--white);
-    --hero-bg-color: linear-gradient(to right, rgba(52, 152, 219, 0.8), rgba(155, 89, 182, 0.8));
-    --hero-text-color: var(--white);
-    --button-bg-color: var(--main-purple);
-    --button-hover-bg-color: var(--light-purple);
-    --footer-bg-color: var(--dark-purple);
-}
 
-/* Dark Mode Colors */
-[data-theme="dark"] {
-    --main-bg-color: #2c3e50;
-    --main-text-color: #ecf0f1;
-    --header-bg-color: var(--dark-purple);
-    --nav-text-color: #f5f5f5;
-    --hero-bg-color: linear-gradient(to right, rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.8));
-    --hero-text-color: #ecf0f1;
-    --button-bg-color: var(--dark-purple);
-    --button-hover-bg-color: var(--main-purple);
-    --footer-bg-color: #1c2833;
-}
-/* Body and Background */
-body {
-    color: var(--main-text-color);
-    background-color: var(--main-bg-color);
-}
-
-/* Header */
-header {
-    background-color: var(--header-bg-color);
-    color: var(--nav-text-color);
-}
 /* Accessibility Enhancements */
 a:focus-visible, button:focus-visible {
     outline: 3px solid var(--light-blue); /* Enhanced focus visibility */
