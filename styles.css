@@ -12,57 +12,22 @@ body {
     line-height: 1.6;
 }
 
-/* Color Scheme */
-:root {
-    --main-purple: #6a0dad;
-    --light-purple: #9b59b6;
-    --dark-purple: #4b0082;
-    --main-blue: #3498db;
-    --light-blue: #5dade2;
-    --dark-blue: #2c3e50;
-    --white: #fff;
-    --gray: #ecf0f1;
+/* Accessibility Enhancements */
+a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--light-blue); /* Enhanced focus visibility */
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: var(--main-purple);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: var(--white);
+/* Animation Control */
+.animations-disabled * {
+    animation: none !important;
+    transition: none !important;
 }
 
-header h1 {
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover, nav a:focus {
-    background-color: var(--light-purple);
-    outline: none; /* For accessibility */
-}
-
-nav a:focus-visible {
-    outline: 2px solid var(--white); /* Enhanced focus visibility */
+@media (prefers-reduced-motion) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 /* Hero Section */
@@ -75,35 +40,19 @@ nav a:focus-visible {
     background: linear-gradient(to right, rgba(52, 152, 219, 0.8), rgba(155, 89, 182, 0.8)), 
                 url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
     color: var(--white);
-    overflow: hidden;
-}
-
-.hero-content {
-    text-align: center;
-    z-index: 2;
 }
 
 /* Typewriter Effect */
 .typewriter-container {
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid var(--white);
+    border-right: 3px solid var(--white); /* Adjusted caret width */
     font-family: 'Courier New', monospace;
     font-size: 1.5rem;
     animation: typing 5s steps(30, end) infinite, 
                blink-caret 0.75s step-end infinite;
     width: auto;
     display: inline-block;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--white); }
 }
 
 /* Button Styles */
@@ -113,13 +62,9 @@ nav a:focus-visible {
     font-size: 1rem;
     background-color: var(--main-purple);
     color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    margin-top: 20px;
 }
 
 .hero-btn:hover, .hero-btn:focus {
@@ -128,187 +73,9 @@ nav a:focus-visible {
     outline: none;
 }
 
-/* About Section */
-.about {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: var(--white);
-}
-
-.about h2 {
-    font-size: 2rem;
-    color: var(--main-blue);
-    margin-bottom: 30px;
-}
-
-.about p {
-    font-size: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-    color: var(--dark-blue);
-}
-
-/* Projects Section */
-.projects {
-    padding: 60px 20px;
-    background-color: var(--gray);
-}
-
-.projects h2 {
-    font-size: 2rem;
-    text-align: center;
-    color: var(--dark-purple);
-    margin-bottom: 50px;
-}
-
-.project-item {
-    max-width: 600px;
-    margin: 0 auto 30px;
-    padding: 30px;
-    background: var(--white);
-    border-left: 5px solid var(--main-blue);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item:hover, .project-item:focus {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    outline: none;
-}
-
-/* Contact Section */
-#contact {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#contact h2 {
-    font-size: 2rem;
-    color: var(--main-purple);
-    margin-bottom: 20px;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: var(--dark-blue);
-}
-
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: var(--dark-blue);
-    box-sizing: border-box;
-}
-
+/* Form Styles */
 .form-group input:focus, 
 .form-group textarea:focus {
     border-color: var(--main-purple);
-    outline: none;
-}
-
-button {
-    padding: 12px 20px;
-    background-color: var(--main-purple);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-button:hover, button:focus {
-    background-color: var(--light-purple);
-    outline: none;
-}
-
-/* Scroll to Top Button */
-button.scroll-top-btn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    padding: 15px;
-    background-color: var(--main-purple);
-    color: var(--white);
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button.scroll-top-btn:hover, button.scroll-top-btn:focus {
-    background-color: var(--dark-purple);
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    background-color: var(--dark-purple);
-    color: var(--white);
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hero {
-        height: 50vh;
-    }
-
-    .about h2, .projects h2 {
-        font-size: 1.5rem;
-    }
-
-    .about p, .project-item p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.4rem;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-    }
-
-    .hero-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
+    outline: 3px solid var(--main-purple); /* Improved visibility */
 }
